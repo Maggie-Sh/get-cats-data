@@ -1,55 +1,33 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import Total from "./Total";
-import ByCountries from "./ByCountries";
+import React from "react";
+import "../styles/Covid.css";
 
 function Covid() {
-  const [value, setValue] = useState(0);
   return (
-    <Router>
-      <div>
-        <Box sx={{ width: 500, marginLeft: 0 }}>
-          <BottomNavigation
-            showLabels
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-          >
-            <Link
-              style={{
-                width: "150px",
-                textDecoration: "none",
-                fontSize: "25px",
-              }}
-              to="/"
-            >
-              <b>Total</b>
-            </Link>
-            <Link
-              style={{
-                width: "150px",
-                textDecoration: "none",
-                fontSize: "25px",
-              }}
-              to="/byCountries"
-            >
-              <b> by Countries </b>
-            </Link>
-          </BottomNavigation>
-        </Box>
-        <Switch>
-          <Route path="/byCountries">
-            <ByCountries />
-          </Route>
-          <Route path="/">
-            <Total />
-          </Route>
-        </Switch>
+    <div className="container">
+      <div className="text">
+        The COVID-19 pandemic, also known as the coronavirus pandemic, is an
+        ongoing global pandemic of coronavirus disease 2019 (COVID-19) caused by
+        severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The novel
+        virus was first identified in the Chinese city of Wuhan in December
+        2019; a lockdown there and in other cities in surrounding Hubei failed
+        to contain the outbreak. The World Health Organization (WHO) declared a
+        Public Health Emergency of International Concern on 30 January 2020, and
+        a pandemic on 11 March 2020. Multiple variants of the virus emerged, led
+        by the Alpha, Beta, Gamma, Delta and Omicron variants. As of 19 December
+        2021, more than 274 million cases and 5.35 million deaths have been
+        confirmed, making the pandemic one of the deadliest in history.
       </div>
-    </Router>
+      <div className="link_to_who">
+        For more information &nbsp;
+        <a
+          href="https://www.who.int/health-topics/coronavirus#tab=tab_1"
+          target="_blank"
+          className="exact_link"
+        >
+          click here.
+        </a>
+      </div>
+    </div>
   );
 }
 

@@ -1,0 +1,17 @@
+.container {
+  padding: 10px 40px 0 40px;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.link_to_who {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.exact_link {
+  text-decoration: none;
+  color: tomato;
+}

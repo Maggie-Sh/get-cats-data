@@ -11,6 +11,7 @@ import TableRow from "@mui/material/TableRow";
 import TextField from "@mui/material/TextField";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import InputAdornment from "@mui/material/InputAdornment";
+import "../styles/Cases.css";
 
 function ByCountries() {
   const [dataByCountries, setDataByCountries] = useState([]);
@@ -28,7 +29,7 @@ function ByCountries() {
   }, []);
 
   return (
-    <div>
+    <div className="container countries_container">
       {!!showProgress && (
         <Stack sx={{ width: "100%", color: "grey.500" }} spacing={2}>
           <LinearProgress color="inherit" />
@@ -36,7 +37,6 @@ function ByCountries() {
       )}
       <TextField
         variant="standard"
-        sx={{ margin: "10px" }}
         size="large"
         InputProps={{
           startAdornment: (
@@ -48,57 +48,30 @@ function ByCountries() {
         value={searchByCountry}
         onChange={(e) => setSearchByCountry(e.target.value)}
       />
-      <Paper sx={{ width: "100%", height: "100%", overflow: "hidden" }}>
-        <TableContainer sx={{ maxHeight: 500 }}>
+      <Paper className="paper">
+        <TableContainer className="table_container">
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
                 <TableCell>
                   <b>Country</b>
                 </TableCell>
-                <TableCell
-                  align="right"
-                  style={{ textAlign: "center", minWidth: "170" }}
-                >
+                <TableCell align="right" className="table_cell">
                   <b>Total Cases</b>
                 </TableCell>
-                <TableCell
-                  align="right"
-                  style={{
-                    textAlign: "center",
-                    minWidth: "170",
-                  }}
-                >
+                <TableCell align="right" className="table_cell">
                   <b>New Cases</b>
                 </TableCell>
-                <TableCell
-                  align="right"
-                  style={{ textAlign: "center", minWidth: "170" }}
-                >
+                <TableCell align="right" className="table_cell">
                   <b>Total Recovered</b>
                 </TableCell>
-                <TableCell
-                  align="right"
-                  style={{
-                    textAlign: "center",
-                    minWidth: "170",
-                  }}
-                >
+                <TableCell align="right" className="table_cell">
                   <b>New Recovered</b>
                 </TableCell>
-                <TableCell
-                  align="right"
-                  style={{ textAlign: "center", minWidth: "170" }}
-                >
+                <TableCell align="right" className="table_cell">
                   <b>Total Deaths</b>
                 </TableCell>
-                <TableCell
-                  align="right"
-                  style={{
-                    textAlign: "center",
-                    minWidth: "170",
-                  }}
-                >
+                <TableCell align="right" className="table_cell">
                   <b>New Deaths</b>
                 </TableCell>
               </TableRow>
@@ -111,29 +84,23 @@ function ByCountries() {
                       <TableCell component="th" scope="row">
                         {country.Country}
                       </TableCell>
-                      <TableCell align="right" style={{ textAlign: "center" }}>
+                      <TableCell align="right" className="table_cell">
                         {country.TotalConfirmed}
                       </TableCell>
                       <TableCell
                         id="confirmed"
                         align="right"
-                        style={{
-                          textAlign: "center",
-                          backgroundColor: "moccasin",
-                        }}
+                        className="table_cell confirmed"
                       >
                         <b>{country.NewConfirmed}</b>
                       </TableCell>
-                      <TableCell align="right" style={{ textAlign: "center" }}>
+                      <TableCell align="right">
                         {country.TotalRecovered}
                       </TableCell>
                       <TableCell
                         id="recovered"
                         align="right"
-                        style={{
-                          textAlign: "center",
-                          backgroundColor: "palegreen",
-                        }}
+                        className="table_cell recovered"
                       >
                         <b>{country.NewRecovered}</b>
                       </TableCell>
@@ -143,10 +110,7 @@ function ByCountries() {
                       <TableCell
                         id="death"
                         align="right"
-                        style={{
-                          textAlign: "center",
-                          backgroundColor: "tomato",
-                        }}
+                        className="table_cell deaths"
                       >
                         <b> {country.NewDeaths}</b>
                       </TableCell>

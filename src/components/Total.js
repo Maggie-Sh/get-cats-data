@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Stack from "@mui/material/Stack";
 import LinearProgress from "@mui/material/LinearProgress";
+import "../styles/Cases.css";
 
 function Total() {
   const [total, setTotal] = useState([]);
@@ -16,7 +17,7 @@ function Total() {
       .catch((err) => console.log(err.message));
   }, []);
   return (
-    <div>
+    <div className="container total">
       {!!showProgress && (
         <Stack sx={{ width: "100%", color: "grey.500" }} spacing={2}>
           <LinearProgress color="inherit" />
