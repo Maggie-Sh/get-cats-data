@@ -74,6 +74,10 @@
     border-radius: 5px;
     padding: 10px 0;
   }
+
+  .navbar_item {
+    width: 100%;
+  }
   .navbar_item:hover {
     transform: scale(1.01);
     transition: all 100ms;
